@@ -1,0 +1,318 @@
+\hypertarget{group__pfleury__uart}{\section{U\-A\-R\-T Library}
+\label{group__pfleury__uart}\index{U\-A\-R\-T Library@{U\-A\-R\-T Library}}
+}
+
+
+Interrupt U\-A\-R\-T library using the built-\/in U\-A\-R\-T with transmit and receive circular buffers.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__pfleury__uart_ga367ff7b5de225ed936a63239ad4adb0b}{U\-A\-R\-T\-\_\-\-B\-A\-U\-D\-\_\-\-S\-E\-L\-E\-C\-T}(baud\-Rate, xtal\-Cpu)~((xtal\-Cpu)/((baud\-Rate)$\ast$16l)-\/1)
+\begin{DoxyCompactList}\small\item\em U\-A\-R\-T baud\-Rate Expression. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__pfleury__uart_ga1a02d45130520cb651ab313e69039382}{U\-A\-R\-T\-\_\-\-B\-A\-U\-D\-\_\-\-S\-E\-L\-E\-C\-T\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-S\-P\-E\-E\-D}(baud\-Rate, xtal\-Cpu)~(((xtal\-Cpu)/((baud\-Rate)$\ast$8l)-\/1)$|$0x8000)
+\begin{DoxyCompactList}\small\item\em U\-A\-R\-T baud\-Rate Expression for A\-Tmega double speed mode. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__pfleury__uart_ga5bdd6772c246436bb14377095de79b31}{U\-A\-R\-T\-\_\-\-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}~128
+\item 
+\#define \hyperlink{group__pfleury__uart_ga05f5d709605c6317c97e4974bec3402a}{U\-A\-R\-T\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}~64
+\item 
+\hypertarget{group__pfleury__uart_gabcdb1041d763560cd8f8e722370dfd37}{\#define \hyperlink{group__pfleury__uart_gabcdb1041d763560cd8f8e722370dfd37}{U\-A\-R\-T\-\_\-\-F\-R\-A\-M\-E\-\_\-\-E\-R\-R\-O\-R}~0x0800}\label{group__pfleury__uart_gabcdb1041d763560cd8f8e722370dfd37}
+
+\begin{DoxyCompactList}\small\item\em Framing Error by U\-A\-R\-T. \end{DoxyCompactList}\item 
+\hypertarget{group__pfleury__uart_ga3183177e3613d8785d8cc8516931beb6}{\#define \hyperlink{group__pfleury__uart_ga3183177e3613d8785d8cc8516931beb6}{U\-A\-R\-T\-\_\-\-O\-V\-E\-R\-R\-U\-N\-\_\-\-E\-R\-R\-O\-R}~0x0400}\label{group__pfleury__uart_ga3183177e3613d8785d8cc8516931beb6}
+
+\begin{DoxyCompactList}\small\item\em Overrun condition by U\-A\-R\-T. \end{DoxyCompactList}\item 
+\hypertarget{group__pfleury__uart_ga94758f3dad6864703b7417d3e40f11df}{\#define \hyperlink{group__pfleury__uart_ga94758f3dad6864703b7417d3e40f11df}{U\-A\-R\-T\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-O\-V\-E\-R\-F\-L\-O\-W}~0x0200}\label{group__pfleury__uart_ga94758f3dad6864703b7417d3e40f11df}
+
+\begin{DoxyCompactList}\small\item\em receive ringbuffer overflow \end{DoxyCompactList}\item 
+\hypertarget{group__pfleury__uart_ga77ba544d423ff42d400220a05303f268}{\#define \hyperlink{group__pfleury__uart_ga77ba544d423ff42d400220a05303f268}{U\-A\-R\-T\-\_\-\-N\-O\-\_\-\-D\-A\-T\-A}~0x0100}\label{group__pfleury__uart_ga77ba544d423ff42d400220a05303f268}
+
+\begin{DoxyCompactList}\small\item\em no receive data available \end{DoxyCompactList}\item 
+\hypertarget{group__pfleury__uart_gae9e143569df2285379bc55f9f5595bf9}{\#define \hyperlink{group__pfleury__uart_gae9e143569df2285379bc55f9f5595bf9}{uart\-\_\-puts\-\_\-\-P}(\-\_\-\-\_\-s)~\hyperlink{group__pfleury__uart_ga6d78b6744db6232f52b4616402036c2f}{uart\-\_\-puts\-\_\-p}(P\-S\-T\-R(\-\_\-\-\_\-s))}\label{group__pfleury__uart_gae9e143569df2285379bc55f9f5595bf9}
+
+\begin{DoxyCompactList}\small\item\em Macro to automatically put a string constant into program memory. \end{DoxyCompactList}\item 
+\hypertarget{group__pfleury__uart_gaabd7a5b0c15611ee9ecb2873cc9ee87a}{\#define \hyperlink{group__pfleury__uart_gaabd7a5b0c15611ee9ecb2873cc9ee87a}{uart1\-\_\-puts\-\_\-\-P}(\-\_\-\-\_\-s)~\hyperlink{group__pfleury__uart_ga1e8074d0a2d5922601c5db2f9777ba79}{uart1\-\_\-puts\-\_\-p}(P\-S\-T\-R(\-\_\-\-\_\-s))}\label{group__pfleury__uart_gaabd7a5b0c15611ee9ecb2873cc9ee87a}
+
+\begin{DoxyCompactList}\small\item\em Macro to automatically put a string constant into program memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__pfleury__uart_gac19a76bb7d446125734a67f9f4b68991}{uart\-\_\-init} (unsigned int baudrate)
+\begin{DoxyCompactList}\small\item\em Initialize U\-A\-R\-T and set baudrate. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{group__pfleury__uart_gaefaab30a8338ec46a6be35b99b1b4f09}{uart\-\_\-getc} (void)
+\begin{DoxyCompactList}\small\item\em Get received byte from ringbuffer. \end{DoxyCompactList}\item 
+void \hyperlink{group__pfleury__uart_gad975221bc08b901e4c7ad69f9c9a97e2}{uart\-\_\-putc} (unsigned char data)
+\begin{DoxyCompactList}\small\item\em Put byte to ringbuffer for transmitting via U\-A\-R\-T. \end{DoxyCompactList}\item 
+void \hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\-\_\-puts} (const char $\ast$s)
+\begin{DoxyCompactList}\small\item\em Put string to ringbuffer for transmitting via U\-A\-R\-T. \end{DoxyCompactList}\item 
+void \hyperlink{group__pfleury__uart_ga6d78b6744db6232f52b4616402036c2f}{uart\-\_\-puts\-\_\-p} (const char $\ast$s)
+\begin{DoxyCompactList}\small\item\em Put string from program memory to ringbuffer for transmitting via U\-A\-R\-T. \end{DoxyCompactList}\item 
+void \hyperlink{group__pfleury__uart_ga4db697cb5469fd70e794fa7df73a6d6a}{uart1\-\_\-init} (unsigned int baudrate)
+\begin{DoxyCompactList}\small\item\em Initialize U\-S\-A\-R\-T1 (only available on selected A\-Tmegas) \end{DoxyCompactList}\item 
+unsigned int \hyperlink{group__pfleury__uart_gaeb1405c641e5bc9b7224018f5e8d90de}{uart1\-\_\-getc} (void)
+\begin{DoxyCompactList}\small\item\em Get received byte of U\-S\-A\-R\-T1 from ringbuffer. (only available on selected A\-Tmega) \end{DoxyCompactList}\item 
+void \hyperlink{group__pfleury__uart_gab465f689d197fadfbacc374fc9411154}{uart1\-\_\-putc} (unsigned char data)
+\begin{DoxyCompactList}\small\item\em Put byte to ringbuffer for transmitting via U\-S\-A\-R\-T1 (only available on selected A\-Tmega) \end{DoxyCompactList}\item 
+void \hyperlink{group__pfleury__uart_ga5568f8f3913b218fd4d0346af78831b2}{uart1\-\_\-puts} (const char $\ast$s)
+\begin{DoxyCompactList}\small\item\em Put string to ringbuffer for transmitting via U\-S\-A\-R\-T1 (only available on selected A\-Tmega) \end{DoxyCompactList}\item 
+void \hyperlink{group__pfleury__uart_ga1e8074d0a2d5922601c5db2f9777ba79}{uart1\-\_\-puts\-\_\-p} (const char $\ast$s)
+\begin{DoxyCompactList}\small\item\em Put string from program memory to ringbuffer for transmitting via U\-S\-A\-R\-T1 (only available on selected A\-Tmega) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interrupt U\-A\-R\-T library using the built-\/in U\-A\-R\-T with transmit and receive circular buffers. 
+\begin{DoxyCode}
+\textcolor{preprocessor}{ #include <uart.h>} 
+\end{DoxyCode}
+
+
+This library can be used to transmit and receive data through the built in U\-A\-R\-T.
+
+An interrupt is generated when the U\-A\-R\-T has finished transmitting or receiving a byte. The interrupt handling routines use circular buffers for buffering received and transmitted data.
+
+The U\-A\-R\-T\-\_\-\-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E and U\-A\-R\-T\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E constants define the size of the circular buffers in bytes. Note that these constants must be a power of 2. You may need to adapt this constants to your target and your application by adding C\-D\-E\-F\-S += -\/\-D\-U\-A\-R\-T\-\_\-\-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E=nn -\/\-D\-U\-A\-R\-T\-\_\-\-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E=nn to your Makefile.
+
+\begin{DoxyNote}{Note}
+Based on Atmel Application Note A\-V\-R306 
+\end{DoxyNote}
+\begin{DoxyAuthor}{Author}
+Peter Fleury \href{mailto:pfleury@gmx.ch}{\tt pfleury@gmx.\-ch} \href{http://jump.to/fleury}{\tt http\-://jump.\-to/fleury} 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{group__pfleury__uart_ga367ff7b5de225ed936a63239ad4adb0b}{\index{U\-A\-R\-T Library@{U\-A\-R\-T Library}!U\-A\-R\-T\-\_\-\-B\-A\-U\-D\-\_\-\-S\-E\-L\-E\-C\-T@{U\-A\-R\-T\-\_\-\-B\-A\-U\-D\-\_\-\-S\-E\-L\-E\-C\-T}}
+\index{U\-A\-R\-T\-\_\-\-B\-A\-U\-D\-\_\-\-S\-E\-L\-E\-C\-T@{U\-A\-R\-T\-\_\-\-B\-A\-U\-D\-\_\-\-S\-E\-L\-E\-C\-T}!UART Library@{U\-A\-R\-T Library}}
+\subsubsection[{U\-A\-R\-T\-\_\-\-B\-A\-U\-D\-\_\-\-S\-E\-L\-E\-C\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-A\-R\-T\-\_\-\-B\-A\-U\-D\-\_\-\-S\-E\-L\-E\-C\-T(
+\begin{DoxyParamCaption}
+\item[{}]{baud\-Rate, }
+\item[{}]{xtal\-Cpu}
+\end{DoxyParamCaption}
+)~((xtal\-Cpu)/((baud\-Rate)$\ast$16l)-\/1)}}\label{group__pfleury__uart_ga367ff7b5de225ed936a63239ad4adb0b}
+
+
+U\-A\-R\-T baud\-Rate Expression. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xtal\-Cpu} & system clock in Mhz, e.\-g. 4000000\-L for 4\-Mhz \\
+\hline
+{\em baud\-Rate} & baudrate in bps, e.\-g. 1200, 2400, 9600 \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__pfleury__uart_ga1a02d45130520cb651ab313e69039382}{\index{U\-A\-R\-T Library@{U\-A\-R\-T Library}!U\-A\-R\-T\-\_\-\-B\-A\-U\-D\-\_\-\-S\-E\-L\-E\-C\-T\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-S\-P\-E\-E\-D@{U\-A\-R\-T\-\_\-\-B\-A\-U\-D\-\_\-\-S\-E\-L\-E\-C\-T\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-S\-P\-E\-E\-D}}
+\index{U\-A\-R\-T\-\_\-\-B\-A\-U\-D\-\_\-\-S\-E\-L\-E\-C\-T\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-S\-P\-E\-E\-D@{U\-A\-R\-T\-\_\-\-B\-A\-U\-D\-\_\-\-S\-E\-L\-E\-C\-T\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-S\-P\-E\-E\-D}!UART Library@{U\-A\-R\-T Library}}
+\subsubsection[{U\-A\-R\-T\-\_\-\-B\-A\-U\-D\-\_\-\-S\-E\-L\-E\-C\-T\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-S\-P\-E\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-A\-R\-T\-\_\-\-B\-A\-U\-D\-\_\-\-S\-E\-L\-E\-C\-T\-\_\-\-D\-O\-U\-B\-L\-E\-\_\-\-S\-P\-E\-E\-D(
+\begin{DoxyParamCaption}
+\item[{}]{baud\-Rate, }
+\item[{}]{xtal\-Cpu}
+\end{DoxyParamCaption}
+)~(((xtal\-Cpu)/((baud\-Rate)$\ast$8l)-\/1)$|$0x8000)}}\label{group__pfleury__uart_ga1a02d45130520cb651ab313e69039382}
+
+
+U\-A\-R\-T baud\-Rate Expression for A\-Tmega double speed mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xtal\-Cpu} & system clock in Mhz, e.\-g. 4000000\-L for 4\-Mhz \\
+\hline
+{\em baud\-Rate} & baudrate in bps, e.\-g. 1200, 2400, 9600 \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__pfleury__uart_ga5bdd6772c246436bb14377095de79b31}{\index{U\-A\-R\-T Library@{U\-A\-R\-T Library}!U\-A\-R\-T\-\_\-\-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E@{U\-A\-R\-T\-\_\-\-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}}
+\index{U\-A\-R\-T\-\_\-\-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E@{U\-A\-R\-T\-\_\-\-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}!UART Library@{U\-A\-R\-T Library}}
+\subsubsection[{U\-A\-R\-T\-\_\-\-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-A\-R\-T\-\_\-\-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E~128}}\label{group__pfleury__uart_ga5bdd6772c246436bb14377095de79b31}
+Size of the circular receive buffer, must be power of 2 \hypertarget{group__pfleury__uart_ga05f5d709605c6317c97e4974bec3402a}{\index{U\-A\-R\-T Library@{U\-A\-R\-T Library}!U\-A\-R\-T\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E@{U\-A\-R\-T\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}}
+\index{U\-A\-R\-T\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E@{U\-A\-R\-T\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}!UART Library@{U\-A\-R\-T Library}}
+\subsubsection[{U\-A\-R\-T\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-A\-R\-T\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E~64}}\label{group__pfleury__uart_ga05f5d709605c6317c97e4974bec3402a}
+Size of the circular transmit buffer, must be power of 2 
+
+\subsection{Function Documentation}
+\hypertarget{group__pfleury__uart_gaeb1405c641e5bc9b7224018f5e8d90de}{\index{U\-A\-R\-T Library@{U\-A\-R\-T Library}!uart1\-\_\-getc@{uart1\-\_\-getc}}
+\index{uart1\-\_\-getc@{uart1\-\_\-getc}!UART Library@{U\-A\-R\-T Library}}
+\subsubsection[{uart1\-\_\-getc}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int uart1\-\_\-getc (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__pfleury__uart_gaeb1405c641e5bc9b7224018f5e8d90de}
+
+
+Get received byte of U\-S\-A\-R\-T1 from ringbuffer. (only available on selected A\-Tmega) 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{group__pfleury__uart_gaefaab30a8338ec46a6be35b99b1b4f09}{uart\-\_\-getc} 
+\end{DoxySeeAlso}
+\hypertarget{group__pfleury__uart_ga4db697cb5469fd70e794fa7df73a6d6a}{\index{U\-A\-R\-T Library@{U\-A\-R\-T Library}!uart1\-\_\-init@{uart1\-\_\-init}}
+\index{uart1\-\_\-init@{uart1\-\_\-init}!UART Library@{U\-A\-R\-T Library}}
+\subsubsection[{uart1\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void uart1\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{baudrate}
+\end{DoxyParamCaption}
+)}}\label{group__pfleury__uart_ga4db697cb5469fd70e794fa7df73a6d6a}
+
+
+Initialize U\-S\-A\-R\-T1 (only available on selected A\-Tmegas) 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{group__pfleury__uart_gac19a76bb7d446125734a67f9f4b68991}{uart\-\_\-init} 
+\end{DoxySeeAlso}
+\hypertarget{group__pfleury__uart_gab465f689d197fadfbacc374fc9411154}{\index{U\-A\-R\-T Library@{U\-A\-R\-T Library}!uart1\-\_\-putc@{uart1\-\_\-putc}}
+\index{uart1\-\_\-putc@{uart1\-\_\-putc}!UART Library@{U\-A\-R\-T Library}}
+\subsubsection[{uart1\-\_\-putc}]{\setlength{\rightskip}{0pt plus 5cm}void uart1\-\_\-putc (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{data}
+\end{DoxyParamCaption}
+)}}\label{group__pfleury__uart_gab465f689d197fadfbacc374fc9411154}
+
+
+Put byte to ringbuffer for transmitting via U\-S\-A\-R\-T1 (only available on selected A\-Tmega) 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{group__pfleury__uart_gad975221bc08b901e4c7ad69f9c9a97e2}{uart\-\_\-putc} 
+\end{DoxySeeAlso}
+\hypertarget{group__pfleury__uart_ga5568f8f3913b218fd4d0346af78831b2}{\index{U\-A\-R\-T Library@{U\-A\-R\-T Library}!uart1\-\_\-puts@{uart1\-\_\-puts}}
+\index{uart1\-\_\-puts@{uart1\-\_\-puts}!UART Library@{U\-A\-R\-T Library}}
+\subsubsection[{uart1\-\_\-puts}]{\setlength{\rightskip}{0pt plus 5cm}void uart1\-\_\-puts (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s}
+\end{DoxyParamCaption}
+)}}\label{group__pfleury__uart_ga5568f8f3913b218fd4d0346af78831b2}
+
+
+Put string to ringbuffer for transmitting via U\-S\-A\-R\-T1 (only available on selected A\-Tmega) 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{uart\-\_\-puts} 
+\end{DoxySeeAlso}
+\hypertarget{group__pfleury__uart_ga1e8074d0a2d5922601c5db2f9777ba79}{\index{U\-A\-R\-T Library@{U\-A\-R\-T Library}!uart1\-\_\-puts\-\_\-p@{uart1\-\_\-puts\-\_\-p}}
+\index{uart1\-\_\-puts\-\_\-p@{uart1\-\_\-puts\-\_\-p}!UART Library@{U\-A\-R\-T Library}}
+\subsubsection[{uart1\-\_\-puts\-\_\-p}]{\setlength{\rightskip}{0pt plus 5cm}void uart1\-\_\-puts\-\_\-p (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s}
+\end{DoxyParamCaption}
+)}}\label{group__pfleury__uart_ga1e8074d0a2d5922601c5db2f9777ba79}
+
+
+Put string from program memory to ringbuffer for transmitting via U\-S\-A\-R\-T1 (only available on selected A\-Tmega) 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{group__pfleury__uart_ga6d78b6744db6232f52b4616402036c2f}{uart\-\_\-puts\-\_\-p} 
+\end{DoxySeeAlso}
+\hypertarget{group__pfleury__uart_gaefaab30a8338ec46a6be35b99b1b4f09}{\index{U\-A\-R\-T Library@{U\-A\-R\-T Library}!uart\-\_\-getc@{uart\-\_\-getc}}
+\index{uart\-\_\-getc@{uart\-\_\-getc}!UART Library@{U\-A\-R\-T Library}}
+\subsubsection[{uart\-\_\-getc}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int uart\-\_\-getc (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__pfleury__uart_gaefaab30a8338ec46a6be35b99b1b4f09}
+
+
+Get received byte from ringbuffer. 
+
+Returns in the lower byte the received character and in the higher byte the last receive error. U\-A\-R\-T\-\_\-\-N\-O\-\_\-\-D\-A\-T\-A is returned when no data is available.
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+lower byte\-: received byte from ringbuffer 
+
+higher byte\-: last receive status
+\begin{DoxyItemize}
+\item {\bfseries 0} successfully received data from U\-A\-R\-T
+\item {\bfseries U\-A\-R\-T\-\_\-\-N\-O\-\_\-\-D\-A\-T\-A} \par
+no receive data available
+\item {\bfseries U\-A\-R\-T\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-O\-V\-E\-R\-F\-L\-O\-W} \par
+Receive ringbuffer overflow. We are not reading the receive buffer fast enough, one or more received character have been dropped
+\item {\bfseries U\-A\-R\-T\-\_\-\-O\-V\-E\-R\-R\-U\-N\-\_\-\-E\-R\-R\-O\-R} \par
+Overrun condition by U\-A\-R\-T. A character already present in the U\-A\-R\-T U\-D\-R register was not read by the interrupt handler before the next character arrived, one or more received characters have been dropped.
+\item {\bfseries U\-A\-R\-T\-\_\-\-F\-R\-A\-M\-E\-\_\-\-E\-R\-R\-O\-R} \par
+Framing Error by U\-A\-R\-T 
+\end{DoxyItemize}
+\end{DoxyReturn}
+\hypertarget{group__pfleury__uart_gac19a76bb7d446125734a67f9f4b68991}{\index{U\-A\-R\-T Library@{U\-A\-R\-T Library}!uart\-\_\-init@{uart\-\_\-init}}
+\index{uart\-\_\-init@{uart\-\_\-init}!UART Library@{U\-A\-R\-T Library}}
+\subsubsection[{uart\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void uart\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{baudrate}
+\end{DoxyParamCaption}
+)}}\label{group__pfleury__uart_gac19a76bb7d446125734a67f9f4b68991}
+
+
+Initialize U\-A\-R\-T and set baudrate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em baudrate} & Specify baudrate using macro \hyperlink{group__pfleury__uart_ga367ff7b5de225ed936a63239ad4adb0b}{U\-A\-R\-T\-\_\-\-B\-A\-U\-D\-\_\-\-S\-E\-L\-E\-C\-T()} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{group__pfleury__uart_gad975221bc08b901e4c7ad69f9c9a97e2}{\index{U\-A\-R\-T Library@{U\-A\-R\-T Library}!uart\-\_\-putc@{uart\-\_\-putc}}
+\index{uart\-\_\-putc@{uart\-\_\-putc}!UART Library@{U\-A\-R\-T Library}}
+\subsubsection[{uart\-\_\-putc}]{\setlength{\rightskip}{0pt plus 5cm}void uart\-\_\-putc (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{data}
+\end{DoxyParamCaption}
+)}}\label{group__pfleury__uart_gad975221bc08b901e4c7ad69f9c9a97e2}
+
+
+Put byte to ringbuffer for transmitting via U\-A\-R\-T. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & byte to be transmitted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}{\index{U\-A\-R\-T Library@{U\-A\-R\-T Library}!uart\-\_\-puts@{uart\-\_\-puts}}
+\index{uart\-\_\-puts@{uart\-\_\-puts}!UART Library@{U\-A\-R\-T Library}}
+\subsubsection[{uart\-\_\-puts}]{\setlength{\rightskip}{0pt plus 5cm}void uart\-\_\-puts (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s}
+\end{DoxyParamCaption}
+)}}\label{group__pfleury__uart_gae52facc0a56086a365bb0018160d8d71}
+
+
+Put string to ringbuffer for transmitting via U\-A\-R\-T. 
+
+The string is buffered by the uart library in a circular buffer and one character at a time is transmitted to the U\-A\-R\-T using interrupts. Blocks if it can not write the whole string into the circular buffer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & string to be transmitted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\hypertarget{group__pfleury__uart_ga6d78b6744db6232f52b4616402036c2f}{\index{U\-A\-R\-T Library@{U\-A\-R\-T Library}!uart\-\_\-puts\-\_\-p@{uart\-\_\-puts\-\_\-p}}
+\index{uart\-\_\-puts\-\_\-p@{uart\-\_\-puts\-\_\-p}!UART Library@{U\-A\-R\-T Library}}
+\subsubsection[{uart\-\_\-puts\-\_\-p}]{\setlength{\rightskip}{0pt plus 5cm}void uart\-\_\-puts\-\_\-p (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{s}
+\end{DoxyParamCaption}
+)}}\label{group__pfleury__uart_ga6d78b6744db6232f52b4616402036c2f}
+
+
+Put string from program memory to ringbuffer for transmitting via U\-A\-R\-T. 
+
+The string is buffered by the uart library in a circular buffer and one character at a time is transmitted to the U\-A\-R\-T using interrupts. Blocks if it can not write the whole string into the circular buffer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & program memory string to be transmitted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{group__pfleury__uart_gae9e143569df2285379bc55f9f5595bf9}{uart\-\_\-puts\-\_\-\-P} 
+\end{DoxySeeAlso}

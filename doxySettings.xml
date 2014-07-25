@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DoxySettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SettingsFile>D:\HDD_C2\avr-project\i2c-slave\i2c-slave-example\my-lib-test\doxySettings.xml</SettingsFile>
+  <ProjectName>my-lib-test</ProjectName>
+  <DoxyExePath>C:\Users\EX4\AppData\Local\Atmel\AtmelStudio\6.0\Extensions\Atmel\Doxygen Integrator\6.0.0.27\Doxygen/doxygen.exe</DoxyExePath>
+  <UseDefaultSettings>true</UseDefaultSettings>
+  <GenerateAsPartOfBuild>true</GenerateAsPartOfBuild>
+  <ConfigFilePath>D:\HDD_C2\avr-project\i2c-slave\i2c-slave-example\my-lib-test\doxyfile</ConfigFilePath>
+  <OutputDirPath>D:\HDD_C2\avr-project\i2c-slave\i2c-slave-example\my-lib-test\doxygen</OutputDirPath>
+  <Excluded>D:\HDD_C2\avr-project\i2c-slave\i2c-slave-example\my-lib-test\lib\adc.c</Excluded>
+  <Excluded>D:\HDD_C2\avr-project\i2c-slave\i2c-slave-example\my-lib-test\lib\adc.h</Excluded>
+  <Excluded>D:\HDD_C2\avr-project\i2c-slave\i2c-slave-example\my-lib-test\lib\bit_util.h</Excluded>
+  <Excluded>D:\HDD_C2\avr-project\i2c-slave\i2c-slave-example\my-lib-test\lib\I2C_master.c</Excluded>
+  <Excluded>D:\HDD_C2\avr-project\i2c-slave\i2c-slave-example\my-lib-test\lib\I2C_master.h</Excluded>
+  <Excluded>D:\HDD_C2\avr-project\i2c-slave\i2c-slave-example\my-lib-test\lib\I2C_slave.c</Excluded>
+  <Excluded>D:\HDD_C2\avr-project\i2c-slave\i2c-slave-example\my-lib-test\lib\I2C_slave.h</Excluded>
+  <Excluded>D:\HDD_C2\avr-project\i2c-slave\i2c-slave-example\my-lib-test\lib\lcd_lib.c</Excluded>
+  <Excluded>D:\HDD_C2\avr-project\i2c-slave\i2c-slave-example\my-lib-test\lib\lcd_lib.h</Excluded>
+  <Excluded>D:\HDD_C2\avr-project\i2c-slave\i2c-slave-example\my-lib-test\lib\lcd_mixed.c</Excluded>
+  <Excluded>D:\HDD_C2\avr-project\i2c-slave\i2c-slave-example\my-lib-test\lib\lcd_mixed.h</Excluded>
+  <Excluded>D:\HDD_C2\avr-project\i2c-slave\i2c-slave-example\my-lib-test\lib\twislave.c</Excluded>
+  <Excluded>D:\HDD_C2\avr-project\i2c-slave\i2c-slave-example\my-lib-test\lib\twislave.h</Excluded>
+  <Excluded>D:\HDD_C2\avr-project\i2c-slave\i2c-slave-example\my-lib-test\lib\usart_lib.c</Excluded>
+  <Excluded>D:\HDD_C2\avr-project\i2c-slave\i2c-slave-example\my-lib-test\lib\usart_lib.h</Excluded>
+  <Excluded>D:\HDD_C2\avr-project\i2c-slave\i2c-slave-example\my-lib-test\my-lib-test.c</Excluded>
+  <Excluded>D:\HDD_C2\avr-project\i2c-slave\i2c-slave-example\my-lib-test\sim900a.c</Excluded>
+  <Excluded>D:\HDD_C2\avr-project\i2c-slave\i2c-slave-example\my-lib-test\sim900-lib-tes.c</Excluded>
+  <ShowErrorsAndWarnings>true</ShowErrorsAndWarnings>
+</DoxySettings>

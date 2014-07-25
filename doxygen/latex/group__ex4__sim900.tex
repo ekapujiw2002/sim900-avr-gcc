@@ -1,0 +1,391 @@
+\hypertarget{group__ex4__sim900}{\section{S\-I\-M900 Library}
+\label{group__ex4__sim900}\index{S\-I\-M900 Library@{S\-I\-M900 Library}}
+}
+
+
+S\-I\-M900 library to handle sms, http request using uart library by Peter Fleury.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group__ex4__sim900_gad14389a3a2f35320404d884acd72ca43}{\#define \hyperlink{group__ex4__sim900_gad14389a3a2f35320404d884acd72ca43}{R\-E\-S\-P\-O\-N\-\_\-\-O\-K}~\char`\"{}O\-K\char`\"{}}\label{group__ex4__sim900_gad14389a3a2f35320404d884acd72ca43}
+
+\begin{DoxyCompactList}\small\item\em Respon O\-K string. \end{DoxyCompactList}\item 
+\hypertarget{group__ex4__sim900_gadceb007a036c1902655465ed31fca63d}{\#define \hyperlink{group__ex4__sim900_gadceb007a036c1902655465ed31fca63d}{R\-E\-S\-P\-O\-N\-\_\-\-E\-R\-R\-O\-R}~\char`\"{}E\-R\-R\-O\-R\char`\"{}}\label{group__ex4__sim900_gadceb007a036c1902655465ed31fca63d}
+
+\begin{DoxyCompactList}\small\item\em Respon E\-R\-R\-O\-R string. \end{DoxyCompactList}\item 
+\hypertarget{group__ex4__sim900_ga5cc2c4b9a9cbfc6af3b1036dc4294aa6}{\#define \hyperlink{group__ex4__sim900_ga5cc2c4b9a9cbfc6af3b1036dc4294aa6}{S\-E\-T\-U\-P\-\_\-\-W\-A\-I\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T}~0}\label{group__ex4__sim900_ga5cc2c4b9a9cbfc6af3b1036dc4294aa6}
+
+\begin{DoxyCompactList}\small\item\em Waiting with timeout time. \end{DoxyCompactList}\item 
+\hypertarget{group__ex4__sim900_ga50b6c8e77c367532a75db7366e900020}{\#define \hyperlink{group__ex4__sim900_ga50b6c8e77c367532a75db7366e900020}{S\-E\-T\-U\-P\-\_\-\-W\-A\-I\-T\-\_\-\-I\-N\-F\-I\-N\-I\-T\-E}~1}\label{group__ex4__sim900_ga50b6c8e77c367532a75db7366e900020}
+
+\begin{DoxyCompactList}\small\item\em Waiting until device attached. \end{DoxyCompactList}\item 
+\hypertarget{group__ex4__sim900_gaa276b433bb7caee9ec1bb1386063707b}{\#define \hyperlink{group__ex4__sim900_gaa276b433bb7caee9ec1bb1386063707b}{H\-T\-T\-P\-\_\-\-G\-E\-T}~0}\label{group__ex4__sim900_gaa276b433bb7caee9ec1bb1386063707b}
+
+\begin{DoxyCompactList}\small\item\em Http G\-E\-T method. \end{DoxyCompactList}\item 
+\hypertarget{group__ex4__sim900_gad786c274cc31d7193adba110054555b7}{\#define \hyperlink{group__ex4__sim900_gad786c274cc31d7193adba110054555b7}{H\-T\-T\-P\-\_\-\-P\-O\-S\-T}~1}\label{group__ex4__sim900_gad786c274cc31d7193adba110054555b7}
+
+\begin{DoxyCompactList}\small\item\em Http P\-O\-S\-T method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__ex4__sim900_ga81bba46c55a48d6cc098174f79b0fbb4}{sim900\-\_\-init\-\_\-uart} (const uint16\-\_\-t baudrate)
+\item 
+void \hyperlink{group__ex4__sim900_gad29f870554063956bd7d7d67fd80c7a6}{uart\-\_\-flush\-\_\-buffer} ()
+\item 
+uint8\-\_\-t \hyperlink{group__ex4__sim900_gaef77b2b930353c3e38dd66ea256fcbd5}{sim900\-\_\-send\-\_\-cmd\-\_\-wait\-\_\-reply} (const uint8\-\_\-t send\-\_\-from\-\_\-progmem, const uint8\-\_\-t $\ast$a\-Cmd, const uint8\-\_\-t $\ast$a\-Respon\-Exit, const uint32\-\_\-t a\-Timeout\-Max, const uint8\-\_\-t a\-Len\-Out, uint8\-\_\-t $\ast$a\-Respon\-Out)
+\item 
+uint8\-\_\-t \hyperlink{group__ex4__sim900_ga695361a574ee1bc5e7b29bde955cd8c6}{sim900\-\_\-is\-\_\-network\-\_\-registered} ()
+\item 
+uint8\-\_\-t \hyperlink{group__ex4__sim900_gaf973888edbf27f2fb8fd8e6adb8b162d}{sim900\-\_\-setup} (const uint8\-\_\-t is\-Waiting\-Device)
+\item 
+uint8\-\_\-t \hyperlink{group__ex4__sim900_ga5346c5b1f1289a05cab2637e51c6dae4}{sim900\-\_\-send\-\_\-sms} (const uint8\-\_\-t $\ast$a\-Sender\-Number, const uint8\-\_\-t $\ast$a\-Message)
+\item 
+uint8\-\_\-t \hyperlink{group__ex4__sim900_gaddb04940d1f436d2ef80cd768961611c}{sim900\-\_\-call\-\_\-phone} (const uint8\-\_\-t $\ast$a\-Sender\-Number)
+\item 
+uint8\-\_\-t \hyperlink{group__ex4__sim900_gaa9eb7f49dcf29fa2f649edc113f314b3}{sim900\-\_\-gprs\-\_\-is\-\_\-opened} ()
+\item 
+uint8\-\_\-t \hyperlink{group__ex4__sim900_ga2a6335f2bdaaee1c5bba7b48f43f1cf2}{sim900\-\_\-gprs\-\_\-close\-\_\-connection} ()
+\item 
+uint8\-\_\-t \hyperlink{group__ex4__sim900_gaa46f662b2663cb8e70fd6d026b533959}{sim900\-\_\-gprs\-\_\-start\-\_\-connection} ()
+\item 
+uint8\-\_\-t \hyperlink{group__ex4__sim900_ga87e5ed2c9a3354421755ae30b43d92a8}{sim900\-\_\-gprs\-\_\-open\-\_\-connection} (const uint8\-\_\-t $\ast$apn, const uint8\-\_\-t $\ast$username, const uint8\-\_\-t $\ast$password)
+\item 
+uint8\-\_\-t \hyperlink{group__ex4__sim900_ga181560b7fbd0457bbc5eb2478e6fbbdf}{sim900\-\_\-http\-\_\-terminate} ()
+\item 
+uint8\-\_\-t \hyperlink{group__ex4__sim900_ga01d34a6c249d5bfd4e6bc98fb9d872cd}{sim900\-\_\-http\-\_\-send\-\_\-data} (const uint8\-\_\-t method, const uint8\-\_\-t $\ast$aurl, const uint8\-\_\-t $\ast$adata, const uint8\-\_\-t max\-\_\-out\-\_\-len, uint8\-\_\-t $\ast$arespon\-\_\-out)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+S\-I\-M900 library to handle sms, http request using uart library by Peter Fleury. 
+\begin{DoxyCode}
+\textcolor{preprocessor}{ #include <sim900.h>} 
+\end{DoxyCode}
+
+
+\begin{DoxyNote}{Note}
+Based on Arduino S\-I\-M900 library with heavily simplified task 
+\end{DoxyNote}
+\begin{DoxyAuthor}{Author}
+E\-X4 \href{mailto:ekapujiw2002@gmail.com}{\tt ekapujiw2002@gmail.\-com} \href{http://ex4-tech.id.or.id}{\tt http\-://ex4-\/tech.\-id.\-or.\-id} 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\hypertarget{group__ex4__sim900_gaddb04940d1f436d2ef80cd768961611c}{\index{S\-I\-M900 Library@{S\-I\-M900 Library}!sim900\-\_\-call\-\_\-phone@{sim900\-\_\-call\-\_\-phone}}
+\index{sim900\-\_\-call\-\_\-phone@{sim900\-\_\-call\-\_\-phone}!SIM900 Library@{S\-I\-M900 Library}}
+\subsubsection[{sim900\-\_\-call\-\_\-phone}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t sim900\-\_\-call\-\_\-phone (
+\begin{DoxyParamCaption}
+\item[{const uint8\-\_\-t $\ast$}]{a\-Sender\-Number}
+\end{DoxyParamCaption}
+)}}\label{group__ex4__sim900_gaddb04940d1f436d2ef80cd768961611c}
+Call a phone number \begin{DoxyAuthor}{Author}
+E\-X4 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0 
+\end{DoxyVersion}
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$a\-Sender\-Number} & Destination number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\-\_\-t 0=fail, 1=success 
+\end{DoxyReturn}
+\hypertarget{group__ex4__sim900_ga2a6335f2bdaaee1c5bba7b48f43f1cf2}{\index{S\-I\-M900 Library@{S\-I\-M900 Library}!sim900\-\_\-gprs\-\_\-close\-\_\-connection@{sim900\-\_\-gprs\-\_\-close\-\_\-connection}}
+\index{sim900\-\_\-gprs\-\_\-close\-\_\-connection@{sim900\-\_\-gprs\-\_\-close\-\_\-connection}!SIM900 Library@{S\-I\-M900 Library}}
+\subsubsection[{sim900\-\_\-gprs\-\_\-close\-\_\-connection}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t sim900\-\_\-gprs\-\_\-close\-\_\-connection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group__ex4__sim900_ga2a6335f2bdaaee1c5bba7b48f43f1cf2}
+Close gprs connection \begin{DoxyAuthor}{Author}
+E\-X4 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0 
+\end{DoxyVersion}
+
+\begin{DoxyParams}{Parameters}
+{\em -\/} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\-\_\-t 0=fail, 1=success 
+\end{DoxyReturn}
+\hypertarget{group__ex4__sim900_gaa9eb7f49dcf29fa2f649edc113f314b3}{\index{S\-I\-M900 Library@{S\-I\-M900 Library}!sim900\-\_\-gprs\-\_\-is\-\_\-opened@{sim900\-\_\-gprs\-\_\-is\-\_\-opened}}
+\index{sim900\-\_\-gprs\-\_\-is\-\_\-opened@{sim900\-\_\-gprs\-\_\-is\-\_\-opened}!SIM900 Library@{S\-I\-M900 Library}}
+\subsubsection[{sim900\-\_\-gprs\-\_\-is\-\_\-opened}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t sim900\-\_\-gprs\-\_\-is\-\_\-opened (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group__ex4__sim900_gaa9eb7f49dcf29fa2f649edc113f314b3}
+Check if gprs connection is already opened \begin{DoxyAuthor}{Author}
+E\-X4 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0 
+\end{DoxyVersion}
+
+\begin{DoxyParams}{Parameters}
+{\em -\/} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\-\_\-t 0=closed, 1=opened 
+\end{DoxyReturn}
+\hypertarget{group__ex4__sim900_ga87e5ed2c9a3354421755ae30b43d92a8}{\index{S\-I\-M900 Library@{S\-I\-M900 Library}!sim900\-\_\-gprs\-\_\-open\-\_\-connection@{sim900\-\_\-gprs\-\_\-open\-\_\-connection}}
+\index{sim900\-\_\-gprs\-\_\-open\-\_\-connection@{sim900\-\_\-gprs\-\_\-open\-\_\-connection}!SIM900 Library@{S\-I\-M900 Library}}
+\subsubsection[{sim900\-\_\-gprs\-\_\-open\-\_\-connection}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t sim900\-\_\-gprs\-\_\-open\-\_\-connection (
+\begin{DoxyParamCaption}
+\item[{const uint8\-\_\-t $\ast$}]{apn, }
+\item[{const uint8\-\_\-t $\ast$}]{username, }
+\item[{const uint8\-\_\-t $\ast$}]{password}
+\end{DoxyParamCaption}
+)}}\label{group__ex4__sim900_ga87e5ed2c9a3354421755ae30b43d92a8}
+Save bearer profile and open up gprs connection \begin{DoxyAuthor}{Author}
+E\-X4 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0 
+\end{DoxyVersion}
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$apn} & A\-P\-N name \\
+\hline
+{\em $\ast$username} & Username \\
+\hline
+{\em $\ast$password} & Password \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\-\_\-t 0=fail, 1=success 
+\end{DoxyReturn}
+\hypertarget{group__ex4__sim900_gaa46f662b2663cb8e70fd6d026b533959}{\index{S\-I\-M900 Library@{S\-I\-M900 Library}!sim900\-\_\-gprs\-\_\-start\-\_\-connection@{sim900\-\_\-gprs\-\_\-start\-\_\-connection}}
+\index{sim900\-\_\-gprs\-\_\-start\-\_\-connection@{sim900\-\_\-gprs\-\_\-start\-\_\-connection}!SIM900 Library@{S\-I\-M900 Library}}
+\subsubsection[{sim900\-\_\-gprs\-\_\-start\-\_\-connection}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t sim900\-\_\-gprs\-\_\-start\-\_\-connection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group__ex4__sim900_gaa46f662b2663cb8e70fd6d026b533959}
+Start gprs connection with specific bearer profile \begin{DoxyAuthor}{Author}
+E\-X4 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0 
+\end{DoxyVersion}
+
+\begin{DoxyParams}{Parameters}
+{\em -\/} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\-\_\-t 0=fail, 1=success 
+\end{DoxyReturn}
+\hypertarget{group__ex4__sim900_ga01d34a6c249d5bfd4e6bc98fb9d872cd}{\index{S\-I\-M900 Library@{S\-I\-M900 Library}!sim900\-\_\-http\-\_\-send\-\_\-data@{sim900\-\_\-http\-\_\-send\-\_\-data}}
+\index{sim900\-\_\-http\-\_\-send\-\_\-data@{sim900\-\_\-http\-\_\-send\-\_\-data}!SIM900 Library@{S\-I\-M900 Library}}
+\subsubsection[{sim900\-\_\-http\-\_\-send\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t sim900\-\_\-http\-\_\-send\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{const uint8\-\_\-t}]{method, }
+\item[{const uint8\-\_\-t $\ast$}]{aurl, }
+\item[{const uint8\-\_\-t $\ast$}]{adata, }
+\item[{const uint8\-\_\-t}]{max\-\_\-out\-\_\-len, }
+\item[{uint8\-\_\-t $\ast$}]{arespon\-\_\-out}
+\end{DoxyParamCaption}
+)}}\label{group__ex4__sim900_ga01d34a6c249d5bfd4e6bc98fb9d872cd}
+Send and/or get data via http P\-O\-S\-T or G\-E\-T \begin{DoxyAuthor}{Author}
+E\-X4 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0 
+\end{DoxyVersion}
+
+\begin{DoxyParams}{Parameters}
+{\em method} & H\-T\-T\-P\-\_\-\-G\-E\-T or H\-T\-T\-P\-\_\-\-P\-O\-S\-T \\
+\hline
+{\em $\ast$aurl} & U\-R\-L address \\
+\hline
+{\em $\ast$adata} & Data to send \\
+\hline
+{\em max\-\_\-out\-\_\-len} & Maximum number of byte to read if any respon is required \\
+\hline
+{\em $\ast$arespon\-\_\-out} & Respon buffer. Set it to N\-U\-L\-L if you don't want to read any data from server \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\-\_\-t 0=fail, 1=success 
+\end{DoxyReturn}
+\hypertarget{group__ex4__sim900_ga181560b7fbd0457bbc5eb2478e6fbbdf}{\index{S\-I\-M900 Library@{S\-I\-M900 Library}!sim900\-\_\-http\-\_\-terminate@{sim900\-\_\-http\-\_\-terminate}}
+\index{sim900\-\_\-http\-\_\-terminate@{sim900\-\_\-http\-\_\-terminate}!SIM900 Library@{S\-I\-M900 Library}}
+\subsubsection[{sim900\-\_\-http\-\_\-terminate}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t sim900\-\_\-http\-\_\-terminate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group__ex4__sim900_ga181560b7fbd0457bbc5eb2478e6fbbdf}
+Terminate http session \begin{DoxyAuthor}{Author}
+E\-X4 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0 
+\end{DoxyVersion}
+
+\begin{DoxyParams}{Parameters}
+{\em -\/} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\-\_\-t 0=fail, 1=success 
+\end{DoxyReturn}
+\hypertarget{group__ex4__sim900_ga81bba46c55a48d6cc098174f79b0fbb4}{\index{S\-I\-M900 Library@{S\-I\-M900 Library}!sim900\-\_\-init\-\_\-uart@{sim900\-\_\-init\-\_\-uart}}
+\index{sim900\-\_\-init\-\_\-uart@{sim900\-\_\-init\-\_\-uart}!SIM900 Library@{S\-I\-M900 Library}}
+\subsubsection[{sim900\-\_\-init\-\_\-uart}]{\setlength{\rightskip}{0pt plus 5cm}void sim900\-\_\-init\-\_\-uart (
+\begin{DoxyParamCaption}
+\item[{const uint16\-\_\-t}]{baudrate}
+\end{DoxyParamCaption}
+)}}\label{group__ex4__sim900_ga81bba46c55a48d6cc098174f79b0fbb4}
+Init uart for modem receive transmit \begin{DoxyAuthor}{Author}
+E\-X4 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0 
+\end{DoxyVersion}
+
+\begin{DoxyParams}{Parameters}
+{\em baudrate} & U\-A\-R\-T speed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ 
+\end{DoxyReturn}
+\hypertarget{group__ex4__sim900_ga695361a574ee1bc5e7b29bde955cd8c6}{\index{S\-I\-M900 Library@{S\-I\-M900 Library}!sim900\-\_\-is\-\_\-network\-\_\-registered@{sim900\-\_\-is\-\_\-network\-\_\-registered}}
+\index{sim900\-\_\-is\-\_\-network\-\_\-registered@{sim900\-\_\-is\-\_\-network\-\_\-registered}!SIM900 Library@{S\-I\-M900 Library}}
+\subsubsection[{sim900\-\_\-is\-\_\-network\-\_\-registered}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t sim900\-\_\-is\-\_\-network\-\_\-registered (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group__ex4__sim900_ga695361a574ee1bc5e7b29bde955cd8c6}
+Check if modem connected to network or not \begin{DoxyAuthor}{Author}
+E\-X4 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0 
+\end{DoxyVersion}
+
+\begin{DoxyParams}{Parameters}
+{\em -\/} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\-\_\-t 1=success, 0=fail 
+\end{DoxyReturn}
+\hypertarget{group__ex4__sim900_gaef77b2b930353c3e38dd66ea256fcbd5}{\index{S\-I\-M900 Library@{S\-I\-M900 Library}!sim900\-\_\-send\-\_\-cmd\-\_\-wait\-\_\-reply@{sim900\-\_\-send\-\_\-cmd\-\_\-wait\-\_\-reply}}
+\index{sim900\-\_\-send\-\_\-cmd\-\_\-wait\-\_\-reply@{sim900\-\_\-send\-\_\-cmd\-\_\-wait\-\_\-reply}!SIM900 Library@{S\-I\-M900 Library}}
+\subsubsection[{sim900\-\_\-send\-\_\-cmd\-\_\-wait\-\_\-reply}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t sim900\-\_\-send\-\_\-cmd\-\_\-wait\-\_\-reply (
+\begin{DoxyParamCaption}
+\item[{const uint8\-\_\-t}]{send\-\_\-from\-\_\-progmem, }
+\item[{const uint8\-\_\-t $\ast$}]{a\-Cmd, }
+\item[{const uint8\-\_\-t $\ast$}]{a\-Respon\-Exit, }
+\item[{const uint32\-\_\-t}]{a\-Timeout\-Max, }
+\item[{const uint8\-\_\-t}]{a\-Len\-Out, }
+\item[{uint8\-\_\-t $\ast$}]{a\-Respon\-Out}
+\end{DoxyParamCaption}
+)}}\label{group__ex4__sim900_gaef77b2b930353c3e38dd66ea256fcbd5}
+Send command to sim900 module and wait for reply at specific timeout \begin{DoxyAuthor}{Author}
+E\-X4 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0 
+\end{DoxyVersion}
+
+\begin{DoxyParams}{Parameters}
+{\em send\-\_\-from\-\_\-progmem} & data from ram or flash (0=ram, 1=flash) \\
+\hline
+{\em $\ast$a\-Cmd} & command to be sent \\
+\hline
+{\em $\ast$a\-Respon\-Exit} & respon string as exit point \\
+\hline
+{\em a\-Timeout\-Max} & command timeout in usecond \\
+\hline
+{\em a\-Len\-Out} & byte of output data \\
+\hline
+{\em $\ast$a\-Respon\-Out} & data output pointer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\-\_\-t 1=success, 0=fail 
+\end{DoxyReturn}
+\hypertarget{group__ex4__sim900_ga5346c5b1f1289a05cab2637e51c6dae4}{\index{S\-I\-M900 Library@{S\-I\-M900 Library}!sim900\-\_\-send\-\_\-sms@{sim900\-\_\-send\-\_\-sms}}
+\index{sim900\-\_\-send\-\_\-sms@{sim900\-\_\-send\-\_\-sms}!SIM900 Library@{S\-I\-M900 Library}}
+\subsubsection[{sim900\-\_\-send\-\_\-sms}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t sim900\-\_\-send\-\_\-sms (
+\begin{DoxyParamCaption}
+\item[{const uint8\-\_\-t $\ast$}]{a\-Sender\-Number, }
+\item[{const uint8\-\_\-t $\ast$}]{a\-Message}
+\end{DoxyParamCaption}
+)}}\label{group__ex4__sim900_ga5346c5b1f1289a05cab2637e51c6dae4}
+Send S\-M\-S \begin{DoxyAuthor}{Author}
+E\-X4 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0 
+\end{DoxyVersion}
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$a\-Sender\-Number} & Destination number \\
+\hline
+{\em $\ast$a\-Message} & Message \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\-\_\-t 0=fail, 1=success 
+\end{DoxyReturn}
+\hypertarget{group__ex4__sim900_gaf973888edbf27f2fb8fd8e6adb8b162d}{\index{S\-I\-M900 Library@{S\-I\-M900 Library}!sim900\-\_\-setup@{sim900\-\_\-setup}}
+\index{sim900\-\_\-setup@{sim900\-\_\-setup}!SIM900 Library@{S\-I\-M900 Library}}
+\subsubsection[{sim900\-\_\-setup}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t sim900\-\_\-setup (
+\begin{DoxyParamCaption}
+\item[{const uint8\-\_\-t}]{is\-Waiting\-Device}
+\end{DoxyParamCaption}
+)}}\label{group__ex4__sim900_gaf973888edbf27f2fb8fd8e6adb8b162d}
+Initialize modem setup with \-:
+\begin{DoxyItemize}
+\item A\-T+\-C\-M\-G\-F=1
+\item A\-T\-E0
+\item A\-T+\-C\-L\-I\-P=1
+\item A\-T+\-C\-M\-P\-S=\char`\"{}\-S\-M\char`\"{},\char`\"{}\-S\-M\char`\"{},\char`\"{}\-S\-M\char`\"{} \begin{DoxyAuthor}{Author}
+E\-X4 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0 
+\end{DoxyVersion}
+
+\begin{DoxyParams}{Parameters}
+{\em is\-Waiting\-Device} & 0=timeout, 1=wait infinite \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\-\_\-t 0=fail, 1=success 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\hypertarget{group__ex4__sim900_gad29f870554063956bd7d7d67fd80c7a6}{\index{S\-I\-M900 Library@{S\-I\-M900 Library}!uart\-\_\-flush\-\_\-buffer@{uart\-\_\-flush\-\_\-buffer}}
+\index{uart\-\_\-flush\-\_\-buffer@{uart\-\_\-flush\-\_\-buffer}!SIM900 Library@{S\-I\-M900 Library}}
+\subsubsection[{uart\-\_\-flush\-\_\-buffer}]{\setlength{\rightskip}{0pt plus 5cm}void uart\-\_\-flush\-\_\-buffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group__ex4__sim900_gad29f870554063956bd7d7d67fd80c7a6}
+Flush all R\-X buffer \begin{DoxyAuthor}{Author}
+E\-X4 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0 
+\end{DoxyVersion}
+
+\begin{DoxyParams}{Parameters}
+{\em -\/} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ 
+\end{DoxyReturn}
